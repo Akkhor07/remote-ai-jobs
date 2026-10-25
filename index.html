@@ -15,21 +15,21 @@
 :root{
   --bg:#F6F5FB; --bg-2:#ECEAF7; --surface:#FFFFFF; --ink:#14122B; --muted:#5E5B78; --line:#E2DFF0;
   --brand:#6D5DFC; --brand-2:#8B7DFF; --brand-ink:#FFFFFF; --mint:#0FA67F; --mint-soft:#DDF6EE;
-  --glow:rgba(109,93,252,.22); --chip:#EFEDFB; --shadow:0 1px 2px rgba(20,18,43,.05),0 8px 24px rgba(20,18,43,.06);
+  --glow:rgba(109,93,252,.22); --chip:#EFEDFB; --warn:#B4530A; --warn-soft:#FDEBD8; --shadow:0 1px 2px rgba(20,18,43,.05),0 8px 24px rgba(20,18,43,.06);
   color-scheme:light;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0B0A16; --bg-2:#13112A; --surface:#15132A; --ink:#EEEDF8; --muted:#A3A0BE; --line:#26233F;
     --brand:#8B7DFF; --brand-2:#A398FF; --brand-ink:#0B0A16; --mint:#2EE0B0; --mint-soft:#10322A;
-    --glow:rgba(139,125,255,.28); --chip:#1E1B38; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    --glow:rgba(139,125,255,.28); --chip:#1E1B38; --warn:#F6A55E; --warn-soft:#3A2614; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0B0A16; --bg-2:#13112A; --surface:#15132A; --ink:#EEEDF8; --muted:#A3A0BE; --line:#26233F;
   --brand:#8B7DFF; --brand-2:#A398FF; --brand-ink:#0B0A16; --mint:#2EE0B0; --mint-soft:#10322A;
-  --glow:rgba(139,125,255,.28); --chip:#1E1B38; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  --glow:rgba(139,125,255,.28); --chip:#1E1B38; --warn:#F6A55E; --warn-soft:#3A2614; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
   color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -136,6 +136,7 @@ section{position:relative;z-index:1;padding:80px 0 0}
 .job h3{font-size:1.22rem;letter-spacing:-.015em}
 .tags{display:flex;flex-wrap:wrap;gap:6px}
 .tag{font-size:.8rem;font-weight:500;padding:4px 10px;border-radius:8px;background:var(--chip);color:var(--muted)}
+.tag.limit{background:var(--warn-soft);color:var(--warn);font-weight:600}
 .job-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
 .pay{font:700 1.15rem "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
 .pay small{display:block;font:400 .78rem Inter,sans-serif;color:var(--muted);letter-spacing:0}
@@ -402,7 +403,13 @@ const JOBS = [
   { title:"Software Engineer (GitHub Contributor)", company:"micro1", category:"tech", pay:"$50–$100", unit:"per hour", tags:["Contract","Remote"], posted:"2026-10-14", link:M1("168285a8-8063-447f-b55b-222c1da4c7c2") },
   { title:"Research Scientist – Computer Science & Computational Physics", company:"micro1", category:"research", pay:"See listing", unit:"", tags:["Contract","Part- or full-time","Remote"], posted:"2026-10-13", link:M1("3cfe73e9-28fa-4b8f-a0b7-bdba2b00f3ef") },
   { title:"Principal Research Scientist (Computer Science / Computational Physics)", company:"micro1", category:"research", pay:"See listing", unit:"", tags:["Contract","Part- or full-time","Remote"], posted:"2026-10-13", link:M1("83ed9d66-130e-4c8f-8e9f-b1d18acdcf98") },
-  { title:"Competitive Data Scientist (Kaggle)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Remote"], posted:"2026-10-12", link:M1("0406acdc-9e38-4f22-a8b5-9e9e228c9bb1") }
+  { title:"Competitive Data Scientist (Kaggle)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Remote"], posted:"2026-10-12", link:M1("0406acdc-9e38-4f22-a8b5-9e9e228c9bb1") },
+  { title:"Mechanical Engineer", company:"Mercor", category:"eng", pay:"$60–$90", unit:"per hour", tags:["40 hrs/week","2–3 months","Remote","US only"], posted:"2026-09-16", link:"https://t.mercor.com/RvEkb" },
+  { title:"Machine Learning Expert", company:"Mercor", category:"tech", pay:"$70–$120", unit:"per hour", tags:["Part-time","Talent pool","Remote","US only"], posted:"2026-09-15", link:"https://t.mercor.com/EbZmD" },
+  { title:"Electrical Test Automation Engineer", company:"Mercor", category:"eng", pay:"$70–$85", unit:"per hour", tags:["Contract","Short-term","Remote","US only"], posted:"2026-08-29", link:"https://t.mercor.com/hiJ6z" },
+  { title:"LLM Research Scientist (Pre-training, Computer Vision & Adversarial Robustness)", company:"Mercor", category:"research", pay:"$100–$120", unit:"per hour", tags:["Contract","Remote","US only"], posted:"2026-08-05", link:"https://t.mercor.com/Tr7Rq" },
+  { title:"Data Scientist Talent Network", company:"Mercor", category:"tech", pay:"$100–$150", unit:"per hour", tags:["Contract","Talent pool","Remote","US only"], posted:"2026-07-29", link:"https://t.mercor.com/HubQt" },
+  { title:"Machine Learning Engineer Talent Network", company:"Mercor", category:"tech", pay:"$70–$250", unit:"per hour", tags:["15–30 hrs/week","Talent pool","Remote","US only"], posted:"2026-02-27", link:"https://t.mercor.com/of3m2" }
 ];
 /* ===================================================== */
 
@@ -428,7 +435,7 @@ document.getElementById('theme').addEventListener('click', () => {
 const PALETTE = ['#6D5DFC','#0FA67F','#E0568A','#F08C2E','#2F80ED','#9B51E0','#14A3B8'];
 const colorFor = name => PALETTE[[...name].reduce((h, c) => h + c.charCodeAt(0), 0) % PALETTE.length];
 const daysAgo = d => Math.floor((Date.now() - new Date(d + 'T00:00:00')) / 864e5);
-const ago = d => { const n = daysAgo(d); return n <= 0 ? 'Posted today' : n === 1 ? 'Posted yesterday' : n < 30 ? `Posted ${n} days ago` : `Posted ${new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'})}`; };
+const ago = d => { const n = daysAgo(d); return n <= 0 ? 'Posted today' : n === 1 ? 'Posted yesterday' : n < 30 ? `Posted ${n} days ago` : `Posted ${new Date(d + 'T00:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'})}`; };
 
 /* render jobs */
 const board = document.getElementById('board');
@@ -443,7 +450,7 @@ board.innerHTML = JOBS.map((j, i) => {
       ${isNew ? '<span class="badge">New</span>' : ''}
     </div>
     <h3>${esc(j.title)}</h3>
-    <div class="tags">${[CATEGORIES[j.category], ...(j.tags||[])].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <div class="tags">${[CATEGORIES[j.category], ...(j.tags||[])].filter(Boolean).map(t => `<span class="tag${/\bonly\b/i.test(t) ? ' limit' : ''}">${esc(t)}</span>`).join('')}</div>
     <div class="job-foot">
       <div class="pay">${esc(j.pay)}${j.unit ? `<small>${esc(j.unit)}</small>` : ''}</div>
       <a class="btn btn-solid apply" href="${esc(url)}" ${j.link ? 'target="_blank" rel="noopener"' : 'data-pending'} aria-label="Apply for ${esc(j.title)} at ${esc(j.company)}">Apply
