@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Remote AI Jobs</title>
+<meta name="description" content="Hand-picked, fully remote AI jobs open to people anywhere in the world. Engineering, research, writing, business, legal, finance and more. Free to apply.">
+<meta property="og:title" content="Remote AI Jobs – work on AI from anywhere">
+<meta property="og:description" content="Hand-picked remote AI roles, open worldwide. Free to apply.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%236D5DFC'/%3E%3Ccircle cx='32' cy='32' r='14' fill='none' stroke='white' stroke-width='5'/%3E%3Ccircle cx='46' cy='18' r='6' fill='%2322D3A6'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#F6F5FB; --bg-2:#ECEAF7; --surface:#FFFFFF; --ink:#14122B; --muted:#5E5B78; --line:#E2DFF0;
+  --brand:#6D5DFC; --brand-2:#8B7DFF; --brand-ink:#FFFFFF; --mint:#0FA67F; --mint-soft:#DDF6EE;
+  --glow:rgba(109,93,252,.22); --chip:#EFEDFB; --shadow:0 1px 2px rgba(20,18,43,.05),0 8px 24px rgba(20,18,43,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0B0A16; --bg-2:#13112A; --surface:#15132A; --ink:#EEEDF8; --muted:#A3A0BE; --line:#26233F;
+    --brand:#8B7DFF; --brand-2:#A398FF; --brand-ink:#0B0A16; --mint:#2EE0B0; --mint-soft:#10322A;
+    --glow:rgba(139,125,255,.28); --chip:#1E1B38; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0B0A16; --bg-2:#13112A; --surface:#15132A; --ink:#EEEDF8; --muted:#A3A0BE; --line:#26233F;
+  --brand:#8B7DFF; --brand-2:#A398FF; --brand-ink:#0B0A16; --mint:#2EE0B0; --mint-soft:#10322A;
+  --glow:rgba(139,125,255,.28); --chip:#1E1B38; --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:"Bricolage Grotesque",Inter,system-ui,sans-serif;line-height:1.08;margin:0;letter-spacing:-.025em}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--brand);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* background glow */
+.aurora{position:absolute;inset:0 0 auto;height:820px;overflow:hidden;pointer-events:none;z-index:0}
+.aurora::before,.aurora::after{content:"";position:absolute;border-radius:50%;filter:blur(80px);opacity:.75}
+.aurora::before{width:560px;height:560px;left:-140px;top:-180px;background:var(--glow)}
+.aurora::after{width:520px;height:520px;right:-160px;top:60px;background:color-mix(in srgb,var(--mint) 22%,transparent)}
+.grid-bg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse 70% 60% at 50% 20%,#000 30%,transparent 75%);opacity:.55}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 70%,transparent)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:800 1.12rem "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.logo{width:34px;height:34px;flex:none}
+nav{display:flex;align-items:center;gap:26px}
+nav a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:12px;font:600 .96rem Inter,sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s,box-shadow .15s,border-color .15s;white-space:nowrap}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-solid{background:var(--brand);color:var(--brand-ink);box-shadow:0 6px 20px var(--glow)}
+.btn-solid:hover{background:var(--brand-2);transform:translateY(-1px)}
+.btn-ghost{background:var(--surface);border-color:var(--line);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--brand)}
+.nav-cta{padding:9px 16px}
+.theme{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.theme svg{width:18px;height:18px}
+@media (max-width:760px){nav a:not(.nav-cta){display:none}nav{gap:10px}}
+
+/* hero */
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-block:80px 64px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px 6px 8px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.86rem;font-weight:500;color:var(--muted);box-shadow:var(--shadow)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 0 var(--mint);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--mint) 60%,transparent)}70%{box-shadow:0 0 0 8px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);margin:22px 0 0;font-weight:800}
+.grad{background:linear-gradient(100deg,var(--brand) 10%,var(--mint) 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:50ch;margin:20px 0 30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.stats{display:flex;flex-wrap:wrap;gap:12px 36px;margin-top:40px}
+.stat strong{display:block;font:800 1.7rem "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.9rem}
+
+/* hero visual */
+.visual{position:relative;aspect-ratio:1;max-width:460px;width:100%;justify-self:center}
+.globe{position:absolute;inset:8%;border-radius:50%;background:radial-gradient(circle at 35% 30%,color-mix(in srgb,var(--brand) 30%,var(--surface)),var(--surface) 70%);border:1px solid var(--line);box-shadow:inset -20px -30px 60px color-mix(in srgb,var(--brand) 14%,transparent),0 30px 80px var(--glow);overflow:hidden}
+.globe svg{position:absolute;inset:0;width:100%;height:100%}
+.spin{animation:spin 24s linear infinite;transform-origin:50% 50%}
+@keyframes spin{to{transform:rotate(360deg)}}
+.orbit{position:absolute;inset:0;border:1px dashed color-mix(in srgb,var(--brand) 40%,transparent);border-radius:50%;animation:spin 40s linear infinite}
+.orbit::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;border-radius:50%;background:var(--mint);box-shadow:0 0 16px var(--mint)}
+.float{position:absolute;display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);font-size:.85rem;font-weight:600;white-space:nowrap;animation:bob 6s ease-in-out infinite}
+.float small{display:block;font-weight:400;color:var(--muted);font-size:.76rem}
+.float .ic{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-size:1rem;flex:none}
+.f1{top:6%;left:-4%}.f2{top:44%;right:-8%;animation-delay:-2s}.f3{bottom:6%;left:4%;animation-delay:-4s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
+@media (max-width:900px){.hero{grid-template-columns:1fr;padding-block:48px 40px}.visual{max-width:340px;order:-1}.f2{right:-2%}}
+@media (max-width:420px){.float{font-size:.78rem;padding:8px 10px}.f1{left:0}.f2{right:0}}
+
+/* marquee */
+.ticker{position:relative;z-index:1;border-block:1px solid var(--line);background:var(--surface);overflow:hidden;padding:14px 0}
+.track{display:flex;gap:44px;width:max-content;animation:slide 40s linear infinite;color:var(--muted);font-weight:500;font-size:.95rem}
+.track span{display:inline-flex;align-items:center;gap:10px}
+.track span::before{content:"✦";color:var(--brand)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* sections */
+section{position:relative;z-index:1;padding:80px 0 0}
+.kicker{font:600 .8rem Inter,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--brand)}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px 24px;margin-bottom:28px}
+.head h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-top:8px}
+.head p{margin:10px 0 0;color:var(--muted);max-width:56ch}
+
+/* jobs toolbar */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px}
+.search{flex:1 1 280px;display:flex;align-items:center;gap:10px;padding:0 16px;height:50px;border-radius:14px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.search:focus-within{border-color:var(--brand)}
+.search svg{width:18px;height:18px;color:var(--muted);flex:none}
+.search input{flex:1;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font:400 1rem Inter,sans-serif}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:500 .9rem Inter,sans-serif;padding:9px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:all .15s}
+.chips button:hover{border-color:var(--brand)}
+.chips button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chips .n{opacity:.6;margin-left:4px;font-size:.82rem}
+
+/* job cards */
+.jobs{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+@media (max-width:380px){.jobs{grid-template-columns:1fr}}
+.job{position:relative;display:flex;flex-direction:column;gap:14px;padding:22px;border-radius:18px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .2s,border-color .2s,box-shadow .2s}
+.job:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--brand) 50%,var(--line));box-shadow:0 18px 40px var(--glow)}
+.job-top{display:flex;align-items:center;gap:12px}
+.avatar{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font:800 1.1rem "Bricolage Grotesque",sans-serif;color:#fff;flex:none}
+.co{font-weight:600;font-size:.92rem}
+.when{color:var(--muted);font-size:.82rem}
+.badge{margin-left:auto;align-self:flex-start;font:600 .72rem Inter,sans-serif;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--mint-soft);color:var(--mint)}
+.job h3{font-size:1.22rem;letter-spacing:-.015em}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:.8rem;font-weight:500;padding:4px 10px;border-radius:8px;background:var(--chip);color:var(--muted)}
+.job-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:14px;border-top:1px dashed var(--line)}
+.pay{font:700 1.15rem "Bricolage Grotesque",sans-serif;letter-spacing:-.01em}
+.pay small{display:block;font:400 .78rem Inter,sans-serif;color:var(--muted);letter-spacing:0}
+.job .btn{padding:10px 16px}
+.job[hidden]{display:none}
+.empty{display:none;text-align:center;padding:48px 20px;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
+.note{font-size:.88rem;color:var(--muted);margin-top:18px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step{padding:26px 22px;border-radius:18px;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden}
+.step .num{font:800 3rem "Bricolage Grotesque",sans-serif;line-height:1;background:linear-gradient(135deg,var(--brand),var(--mint));-webkit-background-clip:text;background-clip:text;color:transparent}
+.step h3{font-size:1.12rem;margin:14px 0 6px}
+.step p{margin:0;color:var(--muted);font-size:.95rem}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* safety */
+.safe{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;padding:44px;border-radius:24px;background:linear-gradient(135deg,#1A1640,#2B2170 60%,#14394A);color:#F1F0FA;overflow:hidden;position:relative}
+.safe::after{content:"";position:absolute;width:360px;height:360px;right:-120px;bottom:-160px;border-radius:50%;background:rgba(46,224,176,.18);filter:blur(60px)}
+.safe .kicker{color:#7FF0CF}
+.safe h2{font-size:clamp(1.8rem,3.6vw,2.5rem);margin-top:8px}
+.safe p{opacity:.85;margin:14px 0 0}
+.safe ul{margin:0;padding:0;list-style:none;position:relative;z-index:1}
+.safe li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+.safe li:last-child{border-bottom:0}
+.safe li svg{width:22px;height:22px;flex:none;color:#7FF0CF;margin-top:1px}
+@media (max-width:820px){.safe{grid-template-columns:1fr;padding:30px 22px;gap:18px}}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:820px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--brand);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:0 0 18px;color:var(--muted)}
+
+/* cta */
+.cta{text-align:center;padding:56px 24px;border-radius:24px;background:var(--surface);border:1px solid var(--line);position:relative;overflow:hidden}
+.cta::before{content:"";position:absolute;inset:-40% 20% auto;height:300px;background:var(--glow);filter:blur(70px);border-radius:50%}
+.cta>*{position:relative}
+.cta h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.cta p{color:var(--muted);margin:12px auto 26px;max-width:46ch}
+
+footer{position:relative;z-index:1;margin-top:80px;padding:36px 0 48px;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+.foot p{margin:0 0 6px;max-width:62ch}
+.foot a{text-decoration:none}.foot a:hover{color:var(--ink)}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;padding:10px 16px;border-radius:12px;background:var(--ink);color:var(--bg);font-size:.9rem;font-weight:500;transition:all .25s;z-index:50;pointer-events:none}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<div class="aurora" aria-hidden="true"><div class="grid-bg"></div></div>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Remote AI Jobs home">
+      <svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6D5DFC"/><stop offset="1" stop-color="#4A3BE0"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#lg)"/><circle cx="32" cy="32" r="14" fill="none" stroke="#fff" stroke-width="5"/><circle cx="46" cy="18" r="6" fill="#22D3A6"/></svg>
+      Remote AI Jobs
+    </a>
+    <nav aria-label="Main">
+      <a href="#jobs">Jobs</a>
+      <a href="#how">How it works</a>
+      <a href="#safety">Stay safe</a>
+      <a href="#faq">FAQ</a>
+      <button class="theme" type="button" id="theme" aria-label="Toggle dark mode">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+      <a class="btn btn-solid nav-cta" data-link="linkedin" href="#">Follow</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div>
+      <span class="pill"><span class="dot"></span><span id="pill-text">New remote roles added every week</span></span>
+      <h1>Work on <span class="grad">AI</span> from anywhere in the world.</h1>
+      <p class="lead">Hand-picked, fully remote AI jobs that are open worldwide. Engineers, researchers, writers, and people from business, legal, finance and more all use what they already know to help build better AI. Applying is always free.</p>
+      <div class="actions">
+        <a class="btn btn-solid" href="#jobs">Browse jobs
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="btn btn-ghost" data-link="linkedin" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          Get jobs on LinkedIn
+        </a>
+      </div>
+      <div class="stats">
+        <div class="stat"><strong id="stat-jobs">0</strong><span>open roles right now</span></div>
+        <div class="stat"><strong>100%</strong><span>remote, flexible hours</span></div>
+        <div class="stat"><strong>$0</strong><span>to apply, always</span></div>
+      </div>
+    </div>
+
+    <div class="visual" aria-hidden="true">
+      <div class="orbit"></div>
+      <div class="globe">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" style="color:color-mix(in srgb,var(--brand) 45%,transparent)">
+          <g class="spin" stroke-width=".8">
+            <ellipse cx="100" cy="100" rx="96" ry="96"/>
+            <ellipse cx="100" cy="100" rx="70" ry="96"/>
+            <ellipse cx="100" cy="100" rx="38" ry="96"/>
+            <line x1="100" y1="4" x2="100" y2="196"/>
+          </g>
+          <g stroke-width=".8">
+            <line x1="4" y1="100" x2="196" y2="100"/>
+            <ellipse cx="100" cy="100" rx="96" ry="40"/>
+            <ellipse cx="100" cy="100" rx="96" ry="72"/>
+          </g>
+          <g fill="var(--mint)" stroke="none">
+            <circle cx="62" cy="70" r="3.5"/><circle cx="132" cy="58" r="3.5"/><circle cx="148" cy="118" r="3.5"/><circle cx="80" cy="140" r="3.5"/><circle cx="108" cy="96" r="3.5"/>
+          </g>
+          <g stroke="var(--mint)" stroke-width="1" stroke-dasharray="3 3" opacity=".7">
+            <path d="M62 70Q100 40 132 58"/><path d="M108 96Q140 90 148 118"/><path d="M80 140Q70 110 108 96"/>
+          </g>
+        </svg>
+      </div>
+      <div class="float f1"><span class="ic" style="background:var(--mint-soft)">🌍</span><span>Open worldwide<small>Apply from any country</small></span></div>
+      <div class="float f2"><span class="ic" style="background:var(--chip)">💸</span><span>Paid in USD<small>Weekly or monthly</small></span></div>
+      <div class="float f3"><span class="ic" style="background:var(--chip)">⏱️</span><span>Your schedule<small>Part-time or full-time</small></span></div>
+    </div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="track" id="track"></div></div>
+
+  <section id="jobs" aria-labelledby="jobs-title">
+    <div class="wrap">
+      <div class="head">
+        <div>
+          <span class="kicker">Open roles</span>
+          <h2 id="jobs-title">Latest remote AI jobs</h2>
+          <p>Every role here is fully remote. Roles tagged <strong>Worldwide</strong> are open to applicants in any country, so check each listing for details.</p>
+        </div>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr">Search jobs</span>
+          <input id="q" type="search" placeholder="Search by role, skill or company" autocomplete="off">
+        </label>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filter by category" style="margin-bottom:22px"></div>
+      <div class="jobs" id="board"></div>
+      <div class="empty" id="empty">No roles match that search yet. New jobs are posted on LinkedIn every week, so follow along.</div>
+      <p class="note">Pay and openings are as listed by each company and can change quickly, so please check the details on the application page.</p>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="head"><div><span class="kicker">The process</span><h2 id="how-title">How it works</h2></div></div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Pick a role</h3><p>Find a job that fits your skills, degree or work experience.</p></div>
+        <div class="step"><div class="num">02</div><h3>Apply</h3><p>Hit Apply and you’ll go straight to the official job post on the company’s site.</p></div>
+        <div class="step"><div class="num">03</div><h3>Interview &amp; test</h3><p>Most platforms run a short online interview or skill check you can do anytime.</p></div>
+        <div class="step"><div class="num">04</div><h3>Start &amp; get paid</h3><p>Once approved, you work on projects remotely and get paid in USD.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="safety" aria-labelledby="safety-title">
+    <div class="wrap">
+      <div class="safe">
+        <div>
+          <span class="kicker">Stay safe</span>
+          <h2 id="safety-title">Watch out for fake recruiters</h2>
+          <p>Scammers often copy real AI job platforms. These quick checks will keep you safe.</p>
+        </div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Real platforms never charge you to apply, train, or “unlock” a job.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Check that emails come from the company’s official domain.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>Be careful with WhatsApp or Telegram “recruiters” promising guaranteed work.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg>We will never ask you for money, passwords, or ID documents.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="head"><div><span class="kicker">Questions</span><h2 id="faq-title">FAQ</h2></div></div>
+      <div class="faq">
+        <details><summary>Can I apply from my country?</summary><p>Most roles here are open worldwide. If a job is limited to certain countries, the card will say so. Always double-check on the job page.</p></details>
+        <details><summary>Do I need to be an AI expert?</summary><p>No. Many AI companies need people with real-world knowledge in fields like law, finance, medicine, writing, languages or coding to help train and test their models.</p></details>
+        <details><summary>Does it cost anything?</summary><p>Never. Applying is free. If anyone asks you to pay for a job, it’s a scam.</p></details>
+        <details><summary>Who hires me?</summary><p>You apply to and work with the company listing the job. We just find the good ones and share them with you.</p></details>
+        <details><summary>How do I hear about new jobs?</summary><p>Follow the LinkedIn page. New roles are posted there and added here every week.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <h2>Never miss a new remote AI job</h2>
+        <p>Follow on LinkedIn and get fresh roles in your feed every week.</p>
+        <a class="btn btn-solid" data-link="linkedin" href="#">Follow on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <p><strong style="color:var(--ink)">Remote AI Jobs</strong></p>
+      <p>Transparency: some Apply buttons are referral links. If you’re hired through them we may earn a small bonus. It never costs you anything and doesn’t affect your application.</p>
+    </div>
+    <div>
+      <p><a data-link="linkedin" href="#">LinkedIn</a></p>
+      <p><a data-link="email" href="#">Email</a></p>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ===================== EDIT HERE ===================== */
+const LINKS = {
+  linkedin: "https://www.linkedin.com/company/144035759/",
+  email: "" /* e.g. "mailto:you@example.com" (leave empty to hide) */
+};
+
+/* One object per job. Newest first.
+   link   = your referral link (where the Apply button goes)
+   posted = date in YYYY-MM-DD (jobs from the last 7 days get a "New" badge)
+   category must match one of the CATEGORIES keys below.
+   micro1 jobs: link:M1("post-id") adds your referral code automatically.
+   Any other job: paste the full referral URL in quotes, e.g. link:"https://..." */
+const CATEGORIES = {
+  tech: "Software & ML",
+  eng: "Engineering & hardware",
+  research: "Research & science",
+  business: "Business & finance"
+};
+
+const REF = "?referralCode=7018259f-1b21-407f-a651-ec4d13aab685&utm_source=referral&utm_medium=share&utm_campaign=job_referral";
+const M1 = id => "https://jobs.micro1.ai/post/" + id + REF;
+
+const JOBS = [
+  { title:"Business Operations Expert", company:"micro1", category:"business", pay:"Up to $90", unit:"per hour", tags:["Contract","Worldwide","English B2+"], posted:"2026-10-24", link:M1("f59ff23d-1cad-470e-8e7c-113f2a3c63e7") },
+  { title:"Member of Technical Staff, Quality Engineering", company:"micro1", category:"tech", pay:"$180k–$250k", unit:"per year + equity", tags:["Full-time","Remote"], posted:"2026-10-24", link:M1("a46ebe3b-f159-4e54-b892-89fe86b2554b") },
+  { title:"Member of Technical Staff, Infrastructure", company:"micro1", category:"tech", pay:"$220k–$300k", unit:"per year + equity", tags:["Full-time","Remote"], posted:"2026-10-24", link:M1("c4d9c64f-c30e-44fe-a32b-8ee6569b47b8") },
+  { title:"Machine Learning Researcher (MSc or PhD)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-23", link:M1("16e1c68d-4f30-431f-a0f8-aa57d4b0893e") },
+  { title:"Applied Scientist – Machine Learning (MSc or PhD)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-23", link:M1("4307f05a-fbd1-4913-91a2-432c782023fb") },
+  { title:"Mathematics Expert (MSc or PhD)", company:"micro1", category:"research", pay:"$80–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-22", link:M1("9701abf9-febd-4f13-9183-80257478f22a") },
+  { title:"Domain Researcher, Finance (M&A)", company:"micro1", category:"business", pay:"$200k–$250k", unit:"per year + equity", tags:["Full-time","Remote"], posted:"2026-10-22", link:M1("b96124bf-0f96-4673-8d17-98a921e907ab") },
+  { title:"Life Sciences Research Expert (Python)", company:"micro1", category:"research", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-21", link:M1("f796a3ec-8108-4e21-9497-f70b6d3ff3b1") },
+  { title:"Mechanical Engineering Expert (MSc or PhD)", company:"micro1", category:"eng", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-16", link:M1("44fc17a0-8964-4970-979b-dd975baad36d") },
+  { title:"Aerodynamics Expert (MSc or PhD)", company:"micro1", category:"eng", pay:"$80–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-16", link:M1("99ef9e98-e4de-4503-b2e3-980390dab872") },
+  { title:"Hardware Expert (MSc or PhD)", company:"micro1", category:"eng", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-16", link:M1("aa1993c5-2079-40ac-ad0a-09ebfd77960d") },
+  { title:"ML Engineer (MSc or PhD)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-16", link:M1("be0ac227-30ab-4126-bde8-e1e0660c940f") },
+  { title:"STEM Expert (MSc or PhD)", company:"micro1", category:"research", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-16", link:M1("7944c9e5-73a0-45a0-b298-d93be3db08ed") },
+  { title:"Applied Scientist", company:"micro1", category:"tech", pay:"See listing", unit:"", tags:["Contract","Remote"], posted:"2026-10-15", link:M1("a58e1af4-14c2-42a6-8e48-301448d8e61c") },
+  { title:"Software Engineer, Platform Engineering", company:"micro1", category:"tech", pay:"$120k–$160k", unit:"per year + equity", tags:["Full-time","Remote"], posted:"2026-10-15", link:M1("84c0959f-ea1b-4bf3-8783-4d74373bb4b7") },
+  { title:"Software Engineer (Open Source Contributor)", company:"micro1", category:"tech", pay:"$50–$100", unit:"per hour", tags:["Contract","Worldwide"], posted:"2026-10-14", link:M1("f29dc369-f46f-443e-986b-7120eebe9225") },
+  { title:"Software Engineer (GitHub Contributor)", company:"micro1", category:"tech", pay:"$50–$100", unit:"per hour", tags:["Contract","Worldwide"], posted:"2026-10-14", link:M1("168285a8-8063-447f-b55b-222c1da4c7c2") },
+  { title:"Research Scientist – Computer Science & Computational Physics", company:"micro1", category:"research", pay:"See listing", unit:"", tags:["Contract","Part- or full-time","Remote"], posted:"2026-10-13", link:M1("3cfe73e9-28fa-4b8f-a0b7-bdba2b00f3ef") },
+  { title:"Principal Research Scientist (Computer Science / Computational Physics)", company:"micro1", category:"research", pay:"See listing", unit:"", tags:["Contract","Part- or full-time","Remote"], posted:"2026-10-13", link:M1("83ed9d66-130e-4c8f-8e9f-b1d18acdcf98") },
+  { title:"Competitive Data Scientist (Kaggle)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Worldwide"], posted:"2026-10-12", link:M1("0406acdc-9e38-4f22-a8b5-9e9e228c9bb1") }
+];
+/* ===================================================== */
+
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+document.querySelectorAll('[data-link]').forEach(a => {
+  const url = LINKS[a.dataset.link];
+  if (!url) { (a.closest('p') || a).hidden = true; return; }
+  a.href = url;
+  if (url.startsWith('http')) { a.target = '_blank'; a.rel = 'noopener'; }
+});
+
+/* theme toggle */
+const root = document.documentElement;
+try { const t = localStorage.getItem('theme'); if (t) root.dataset.theme = t; } catch (e) {}
+document.getElementById('theme').addEventListener('click', () => {
+  const dark = root.dataset.theme ? root.dataset.theme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  root.dataset.theme = dark ? 'light' : 'dark';
+  try { localStorage.setItem('theme', root.dataset.theme); } catch (e) {}
+});
+
+/* helpers */
+const PALETTE = ['#6D5DFC','#0FA67F','#E0568A','#F08C2E','#2F80ED','#9B51E0','#14A3B8'];
+const colorFor = name => PALETTE[[...name].reduce((h, c) => h + c.charCodeAt(0), 0) % PALETTE.length];
+const daysAgo = d => Math.floor((Date.now() - new Date(d + 'T00:00:00')) / 864e5);
+const ago = d => { const n = daysAgo(d); return n <= 0 ? 'Posted today' : n === 1 ? 'Posted yesterday' : n < 30 ? `Posted ${n} days ago` : `Posted ${new Date(d).toLocaleDateString(undefined,{month:'short',day:'numeric'})}`; };
+
+/* render jobs */
+const board = document.getElementById('board');
+board.innerHTML = JOBS.map((j, i) => {
+  const url = j.link || '#';
+  const isNew = j.posted && daysAgo(j.posted) <= 7;
+  return `
+  <article class="job" data-cat="${esc(j.category)}" data-text="${esc([j.title, j.company, CATEGORIES[j.category], ...(j.tags||[])].join(' ').toLowerCase())}">
+    <div class="job-top">
+      <div class="avatar" style="background:${colorFor(j.company)}">${esc(j.company.charAt(0).toUpperCase())}</div>
+      <div><div class="co">${esc(j.company)}</div><div class="when">${j.posted ? ago(j.posted) : ''}</div></div>
+      ${isNew ? '<span class="badge">New</span>' : ''}
+    </div>
+    <h3>${esc(j.title)}</h3>
+    <div class="tags">${[CATEGORIES[j.category], ...(j.tags||[])].filter(Boolean).map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+    <div class="job-foot">
+      <div class="pay">${esc(j.pay)}${j.unit ? `<small>${esc(j.unit)}</small>` : ''}</div>
+      <a class="btn btn-solid apply" href="${esc(url)}" ${j.link ? 'target="_blank" rel="noopener"' : 'data-pending'} aria-label="Apply for ${esc(j.title)} at ${esc(j.company)}">Apply
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </article>`;
+}).join('');
+
+document.getElementById('stat-jobs').textContent = JOBS.length;
+const newCount = JOBS.filter(j => j.posted && daysAgo(j.posted) <= 7).length;
+if (newCount) document.getElementById('pill-text').textContent = `${newCount} new remote role${newCount > 1 ? 's' : ''} this week`;
+
+/* ticker */
+const words = [...new Set(JOBS.map(j => j.title.replace(/\s*\(.*\)/, '')))];
+document.getElementById('track').innerHTML = [...words, ...words].map(w => `<span>${esc(w)}</span>`).join('');
+
+/* toast for jobs without a link yet */
+const toast = document.getElementById('toast');
+board.addEventListener('click', e => {
+  const a = e.target.closest('[data-pending]');
+  if (!a) return;
+  e.preventDefault();
+  toast.textContent = 'Application link coming soon. Follow on LinkedIn for updates.';
+  toast.classList.add('show');
+  clearTimeout(toast._t); toast._t = setTimeout(() => toast.classList.remove('show'), 2600);
+});
+
+/* filters + search */
+const chips = document.getElementById('chips');
+const used = Object.keys(CATEGORIES).filter(k => JOBS.some(j => j.category === k));
+chips.innerHTML = `<button type="button" aria-pressed="true" data-cat="all">All<span class="n">${JOBS.length}</span></button>` +
+  used.map(k => `<button type="button" aria-pressed="false" data-cat="${k}">${esc(CATEGORIES[k])}<span class="n">${JOBS.filter(j => j.category === k).length}</span></button>`).join('');
+
+let cat = 'all';
+const q = document.getElementById('q');
+const empty = document.getElementById('empty');
+function apply() {
+  const term = q.value.trim().toLowerCase();
+  let shown = 0;
+  board.querySelectorAll('.job').forEach(card => {
+    const ok = (cat === 'all' || card.dataset.cat === cat) && (!term || card.dataset.text.includes(term));
+    card.hidden = !ok; if (ok) shown++;
+  });
+  empty.style.display = shown ? 'none' : 'block';
+}
+chips.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  cat = b.dataset.cat;
+  chips.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  apply();
+});
+q.addEventListener('input', apply);
+</script>
+</body>
+</html>
