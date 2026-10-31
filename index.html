@@ -367,7 +367,7 @@ const LINKS = {
   email: "" /* e.g. "mailto:you@example.com" (leave empty to hide) */
 };
 
-/* One object per job. Newest first.
+/* One object per job, in any order (the site sorts them newest first).
    link   = your referral link (where the Apply button goes)
    posted = date in YYYY-MM-DD (jobs from the last 7 days get a "New" badge)
    category must match one of the CATEGORIES keys below.
@@ -377,7 +377,9 @@ const CATEGORIES = {
   tech: "Software & ML",
   eng: "Engineering & hardware",
   research: "Research & science",
-  business: "Business & finance"
+  business: "Business & finance",
+  language: "Language & voice",
+  general: "Generalist & creative"
 };
 
 const REF = "?referralCode=7018259f-1b21-407f-a651-ec4d13aab685&utm_source=referral&utm_medium=share&utm_campaign=job_referral";
@@ -405,11 +407,21 @@ const JOBS = [
   { title:"Principal Research Scientist (Computer Science / Computational Physics)", company:"micro1", category:"research", pay:"See listing", unit:"", tags:["Contract","Part- or full-time","Remote"], posted:"2026-10-13", link:M1("83ed9d66-130e-4c8f-8e9f-b1d18acdcf98") },
   { title:"Competitive Data Scientist (Kaggle)", company:"micro1", category:"tech", pay:"$60–$120", unit:"per hour", tags:["Contract","~15 hrs/week","Remote"], posted:"2026-10-12", link:M1("0406acdc-9e38-4f22-a8b5-9e9e228c9bb1") },
   { title:"Mechanical Engineer", company:"Mercor", category:"eng", pay:"$60–$90", unit:"per hour", tags:["40 hrs/week","2–3 months","Remote","US only"], posted:"2026-09-16", link:"https://t.mercor.com/RvEkb" },
-  { title:"Machine Learning Expert", company:"Mercor", category:"tech", pay:"$70–$120", unit:"per hour", tags:["Part-time","Talent pool","Remote","US only"], posted:"2026-09-15", link:"https://t.mercor.com/EbZmD" },
-  { title:"Electrical Test Automation Engineer", company:"Mercor", category:"eng", pay:"$70–$85", unit:"per hour", tags:["Contract","Short-term","Remote","US only"], posted:"2026-08-29", link:"https://t.mercor.com/hiJ6z" },
-  { title:"LLM Research Scientist (Pre-training, Computer Vision & Adversarial Robustness)", company:"Mercor", category:"research", pay:"$100–$120", unit:"per hour", tags:["Contract","Remote","US only"], posted:"2026-08-05", link:"https://t.mercor.com/Tr7Rq" },
-  { title:"Data Scientist Talent Network", company:"Mercor", category:"tech", pay:"$100–$150", unit:"per hour", tags:["Contract","Talent pool","Remote","US only"], posted:"2026-07-29", link:"https://t.mercor.com/HubQt" },
-  { title:"Machine Learning Engineer Talent Network", company:"Mercor", category:"tech", pay:"$70–$250", unit:"per hour", tags:["15–30 hrs/week","Talent pool","Remote","US only"], posted:"2026-02-27", link:"https://t.mercor.com/of3m2" }
+  { title:"Machine Learning Expert", company:"Mercor", category:"tech", pay:"$70–$120", unit:"per hour", tags:["Part-time","Talent pool","Remote"], posted:"2026-09-15", link:"https://t.mercor.com/EbZmD" },
+  { title:"Electrical Test Automation Engineer", company:"Mercor", category:"eng", pay:"$70–$85", unit:"per hour", tags:["Contract","Short-term","Remote"], posted:"2026-08-29", link:"https://t.mercor.com/hiJ6z" },
+  { title:"LLM Research Scientist (Pre-training, Computer Vision & Adversarial Robustness)", company:"Mercor", category:"research", pay:"$100–$120", unit:"per hour", tags:["Contract","Remote"], posted:"2026-08-05", link:"https://t.mercor.com/Tr7Rq" },
+  { title:"Data Scientist Talent Network", company:"Mercor", category:"tech", pay:"$100–$150", unit:"per hour", tags:["Contract","Talent pool","Remote"], posted:"2026-07-29", link:"https://t.mercor.com/HubQt" },
+  { title:"Machine Learning Engineer Talent Network", company:"Mercor", category:"tech", pay:"$70–$250", unit:"per hour", tags:["15–30 hrs/week","Talent pool","Remote"], posted:"2026-02-27", link:"https://t.mercor.com/of3m2" },
+  { title:"Music & Sound Annotation Expert", company:"micro1", category:"general", pay:"See listing", unit:"", tags:["Contract","20–25 hrs/week","Remote"], posted:"2026-10-31", link:M1("bff394b3-ebf8-462e-bfaa-9e9fbe4daae7") },
+  { title:"Generalist", company:"micro1", category:"general", pay:"See listing", unit:"", tags:["Contract","Remote","US only"], posted:"2026-10-23", link:M1("6a124045-dbe2-4435-aadd-e1f1ebaa5e8f") },
+  { title:"AI Photo Rater", company:"micro1", category:"general", pay:"See listing", unit:"", tags:["Contract","Remote","US only"], posted:"2026-10-16", link:M1("2208e450-8d5c-4f72-9b6e-a70e71c9e049") },
+  { title:"AI Chat Generalist", company:"Mercor", category:"general", pay:"$30", unit:"per hour", tags:["Contract","~10 hrs/week","Remote","Select countries only"], posted:"2026-10-30", link:"https://t.mercor.com/4xrIF" },
+  { title:"Search Generalist", company:"Mercor", category:"general", pay:"$30–$40", unit:"per hour", tags:["Contract","Remote"], posted:"2026-10-27", link:"https://t.mercor.com/S5v2t" },
+  { title:"English Linguistic Expert", company:"Mercor", category:"language", pay:"$50", unit:"per hour", tags:["Part-time","Native-level English","Remote"], posted:"2026-10-26", link:"https://t.mercor.com/QqySl" },
+  { title:"Language & Audio Expert", company:"Mercor", category:"language", pay:"$35–$50", unit:"per hour", tags:["Part-time","Talent pool","Remote"], posted:"2026-09-15", link:"https://t.mercor.com/L3RNZ" },
+  { title:"Consumer & Lifestyle Expert", company:"Mercor", category:"general", pay:"$50–$75", unit:"per hour", tags:["Part-time","Talent pool","Remote"], posted:"2026-09-15", link:"https://t.mercor.com/yG9kD" },
+  { title:"Generalist (Must Own a MacBook)", company:"Mercor", category:"general", pay:"$40–$80", unit:"per hour", tags:["Contract","10–20 hrs/week","Remote"], posted:"2026-07-26", link:"https://t.mercor.com/JdSXk" },
+  { title:"Voice Actor – CX Agent Voice Cloning", company:"Mercor", category:"language", pay:"$50–$200", unit:"per hour", tags:["Contract","Voice will be cloned","Remote","US only"], posted:"2026-03-20", link:"https://t.mercor.com/rK74p" }
 ];
 /* ===================================================== */
 
@@ -438,6 +450,8 @@ const daysAgo = d => Math.floor((Date.now() - new Date(d + 'T00:00:00')) / 864e5
 const ago = d => { const n = daysAgo(d); return n <= 0 ? 'Posted today' : n === 1 ? 'Posted yesterday' : n < 30 ? `Posted ${n} days ago` : `Posted ${new Date(d + 'T00:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'})}`; };
 
 /* render jobs */
+JOBS.sort((a, b) => (b.posted || '').localeCompare(a.posted || ''));
+
 const board = document.getElementById('board');
 board.innerHTML = JOBS.map((j, i) => {
   const url = j.link || '#';
